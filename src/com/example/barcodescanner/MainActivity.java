@@ -24,7 +24,8 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub  
                 Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-                intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                //intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                Log.i("Scanner" , "starting intent");
                 startActivityForResult(intent, 0);
             }
         });
@@ -33,6 +34,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+		Log.i("Scanner" , "yeah enetering on result now");
         if (requestCode == 0) {
            if (resultCode == RESULT_OK) {
                
