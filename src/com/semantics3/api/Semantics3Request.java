@@ -69,9 +69,12 @@ public class Semantics3Request{
 		request.setRequestProperty("User-Agent", "Semantics3 Java Library");
 		consumer.sign(request);
 		request.connect();
+		
 		//maybe change this code
 		JSONTokener t = new JSONTokener(request.getInputStream().toString());
 		JSONObject json = new JSONObject(t);
+		
+		//JSONObject json = new JSONObject(new JSONTokener(request.getInputStream()));
 		
 		return json;
 	}
